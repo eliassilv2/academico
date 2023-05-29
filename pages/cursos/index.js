@@ -48,7 +48,7 @@ const index = () => {
                     {cursos.map((item, i) => (
                         <tr key={i}>
                             <td>
-                                <Link href={'/cursos/' + 1}>
+                                <Link href={'/cursos/' + i}>
                                     <HiOutlinePencilAlt title='Alterar' className='text-primary' />
                                 </Link>
                                 {' '}

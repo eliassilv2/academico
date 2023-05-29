@@ -9,13 +9,13 @@ const Cabecalho = () => {
         <Container>
           <Navbar.Brand href="/cursos">Academico</Navbar.Brand>
           <Nav className="me-auto">
-              <Nav.Link href="/filmes">Cursos</Nav.Link>
-              <Nav.Link href="../filmes/lancamento">Disciplinas</Nav.Link>
-              <Nav.Link href="../filmes/cartaz">Alunos</Nav.Link>
-              <Nav.Link href="/filmes/cartaz">Professores</Nav.Link>
-              <Nav.Link href="/filmes/cartaz">Turmas</Nav.Link>
-              <Nav.Link href="/filmes/cartaz">Salas</Nav.Link>
-              <Nav.Link href="/filmes/cartaz">Semestres</Nav.Link>
+              <Nav.Link href="/cursos">Cursos</Nav.Link>
+              <Nav.Link href="../disciplinas">Disciplinas</Nav.Link>
+              <Nav.Link href="../alunos">Alunos</Nav.Link>
+              <Nav.Link href="../professores">Professores</Nav.Link>
+              <Nav.Link href="/turmas">Turmas</Nav.Link>
+              <Nav.Link href="/salas">Salas</Nav.Link>
+              <Nav.Link href="/semestres">Semestres</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
