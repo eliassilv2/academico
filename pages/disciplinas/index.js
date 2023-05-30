@@ -12,10 +12,19 @@ const index = () => {
     const [disciplinas, setDisciplinas] = useState([])
 
     useEffect(() => {
-        axios.get('/api/disciplinas').then(resultados => {
-            setDisciplinas(resultados.data);
-        })
+        getAll()
     }, [])
+
+    function getAll(){
+            axios.get('/api/disciplinas').then(resultados => {
+                setDisciplinas(resultados.data);
+            })
+    }
+
+    function excluir(id){
+        axios.delete('/api/disciplinas/' + id)
+        getAll()
+    }
 
     return (
         <Pagina titulo="Disciplinas">
@@ -29,24 +38,23 @@ const index = () => {
                 <thead>
                     <tr>
                         <th>Excluir</th>
-                        <th>Nome</th>
-                        <th>Duração</th>
-                        <th>Modalidade</th>
+                        <th>Disciplina</th>
+                        <th>Curso</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     {disciplinas.map((item, i) => (
-                        <tr key={i}>
+                        <tr key={item.id}>
                             <td>
-                                <Link href={'/disciplinas/' + i}>
+                                <Link href={'/disciplinas/' + item.id}>
                                     <HiOutlinePencilAlt title='Alterar' className='text-primary' />
                                 </Link>
                                 {' '}
-                                <BsTrash3 title='Excluir' onClick={() => excluir(i)} className='text-warning' />
+                                <BsTrash3 title='Excluir' onClick={() => excluir(item.id)} className='text-warning' />
                             </td>
                             <td>{item.nome}</td>
-                            <td>{item.duracao}</td>
-                            <td>{item.modalidade}</td>
+                            <td>{item.curso}</td>
                         </tr>
                     ))}
                 </tbody>
