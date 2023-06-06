@@ -2,7 +2,7 @@ import Pagina from '@/components/Pagina'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap'
-import { AiOutlinePlus } from 'react-icons/ai' 
+import { AiOutlinePlus } from 'react-icons/ai'
 import { BsTrash3 } from 'react-icons/bs'
 import { HiOutlinePencilAlt } from 'react-icons/hi'
 import axios from 'axios'
@@ -15,22 +15,24 @@ const index = () => {
         getAll()
     }, [])
 
-    function getAll(){
-            axios.get('/api/disciplinas').then(resultados => {
-                setDisciplinas(resultados.data);
-            })
+    function getAll() {
+        axios.get('/api/disciplinas').then(resultados => {
+            setDisciplinas(resultados.data);
+        })
     }
 
-    function excluir(id){
-        axios.delete('/api/disciplinas/' + id)
-        getAll()
+    function excluir(id) {
+        if (confirm('Deseja realmente excluir o registro?')) {
+            axios.delete('/api/disciplinas/' + id)
+            getAll()
+        }
     }
 
     return (
         <Pagina titulo="Disciplinas">
 
             <Link href="/disciplinas/form" className='mb-2 btn btn-primary'>
-            <AiOutlinePlus className='me-1' />
+                <AiOutlinePlus className='me-1' />
                 Novo
             </Link>
 
@@ -40,11 +42,11 @@ const index = () => {
                         <th>Excluir</th>
                         <th>Disciplina</th>
                         <th>Curso</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    {disciplinas.map((item, i) => (
+                    {disciplinas.map(item => (
                         <tr key={item.id}>
                             <td>
                                 <Link href={'/disciplinas/' + item.id}>
