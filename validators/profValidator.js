@@ -1,4 +1,4 @@
-const cursoValidator = {
+const profValidator = {
     nome: {
         required: 'Campo Obrigatório!',
         minLength: {
@@ -13,7 +13,7 @@ const cursoValidator = {
         },
     },
 
-    duracao: {
+    cpf: {
         required: 'Campo Obrigatório!',
         minLength: {
             value: 3,
@@ -22,25 +22,30 @@ const cursoValidator = {
 
         required: 'Campo Obrigatório!',
         maxLength: {
-            value: 20,
-            message: 'o maximo é 20'
+            value: 11,
+            message: 'o maximo é 11'
         },
     },
 
-    modalidade: {
+    matricula: {
         required: 'Campo Obrigatório!',
         minLength: {
-            value: 2,
-            message: 'o minimo é 2'
+            value: 3,
+            message: 'o minimo é 3'
         },
 
         required: 'Campo Obrigatório!',
         maxLength: {
-            value: 12,
-            message: 'o maximo é 12'
-        },  
-    }
+            value: 4,
+            message: 'o maximo é 4'
+        },
+    },
 
-}
-
-export default cursoValidator
+    salario: {
+        required: 'Campo Obrigatório!',
+        minLength: {
+            value: 3,
+            message: 'o minimo é 3'
+        },
+    },
+}   
