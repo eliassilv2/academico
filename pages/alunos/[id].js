@@ -43,17 +43,27 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="cpf">
                     <Form.Label>CPF: </Form.Label>
-                    <Form.Control type="number" {...register('cpf')} />
+                    <Form.Control type="text" {...register('cpf')} />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="dt_nascimento">
+                    <Form.Label>Dt. Nascimento: </Form.Label>
+                    <Form.Control type="text" {...register('dt_nascimento')} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="matricula">
                     <Form.Label>Matricula: </Form.Label>
-                    <Form.Control type="number" {...register('matricula')} />
+                    <Form.Control type="text" {...register('matricula')} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email: </Form.Label>
                     <Form.Control type="text" {...register('email')} />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="cep">
+                    <Form.Label>CEP: </Form.Label>
+                    <Form.Control type="text" {...register('cep')} />
                 </Form.Group>
 
                 <div className='text-center'>

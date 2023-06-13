@@ -41,6 +41,7 @@ const index = () => {
                             <th>Excluir</th>
                             <th>Nome</th>
                             <th>CPF</th>
+                            <th>Dt. Nascimento</th>
                             <th>Matricula</th>
                             <th>Email</th>
                         </tr>
@@ -58,6 +59,7 @@ const index = () => {
                                 </td>
                                 <td>{item.nome}</td>
                                 <td>{item.cpf}</td>
+                                <td>{item.dt_nascimento}</td>
                                 <td>{item.matricula}</td>
                                 <td>{item.email}</td>
                             </tr>
