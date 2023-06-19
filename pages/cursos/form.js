@@ -9,7 +9,7 @@ import { TbArrowBack } from 'react-icons/tb'
 import cursoValidator from '@/validators/cursoValidator'
 
 const form = () => {
-    
+
     const { push } = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm()
 
@@ -20,7 +20,7 @@ const form = () => {
         push('/cursos')
     }
 
-    
+
     return (
         <Pagina titulo='Curso'>
 
@@ -28,7 +28,11 @@ const form = () => {
             <Form>
                 <Form.Group className="mb-3" controlId="nome">
                     <Form.Label>Nome: </Form.Label>
-                    <Form.Control isInvalid={errors.nome} type="text" {...register('nome', cursoValidator.nome)} />
+                    <Form.Control
+                        isInvalid={errors.nome}
+                        type="text"
+                        {...register('nome', cursoValidator.nome)} 
+                        placeholder='Seu nome aqui...'/>
                     {
                         errors.nome &&
                         <small className='mt-1'>{errors.nome.message}</small>
@@ -37,16 +41,23 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="duracao">
                     <Form.Label>Duração: </Form.Label>
-                    <Form.Control isInvalid={errors.duracao} type="text" {...register('duracao', cursoValidator.duracao)} />
+                    <Form.Control
+                        isInvalid={errors.duracao}
+                        type="text"
+                        {...register('duracao', cursoValidator.duracao)} 
+                        placeholder='Semestres...'/>
                     {
                         errors.duracao &&
-                        <small className='mt-1'>{errors.duracao.message}</small>    
+                        <small className='mt-1'>{errors.duracao.message}</small>
                     }
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="modalidade">
                     <Form.Label>Modalidade: </Form.Label>
-                    <Form.Control isInvalid={errors.modalidade} type="text" {...register('modalidade', cursoValidator.modalidade)} />
+                    <Form.Control
+                        isInvalid={errors.modalidade}
+                        type="text"
+                        {...register('modalidade', cursoValidator.modalidade)} />
                     {
                         errors.modalidade &&
                         <small className='mt-1'>{errors.modalidade.message}</small>
